@@ -2,6 +2,11 @@ name: Deploy changes to Conginitecz
 
 on:
   workflow_dispatch:
+    inputs:
+      reason:
+        description: "Reason for manual deployment"
+        required: false
+        default: "Manual deployment"
   push:
     branches:
       - main
