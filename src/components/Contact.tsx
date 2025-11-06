@@ -13,11 +13,34 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission here
-    alert('Thank you for your message! We\'ll get back to you soon.');
-    setFormData({ name: '', email: '', phone: '', message: '' });
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbx00fcag-sg947j7VCSgzOvonD_5fr9XD74FNDtMufIiPz-DP58cBLBrDeA_GyqkCe9/exec';
+
+    const fd = new FormData();
+    fd.append('name', formData.name.trim());
+    fd.append('email', formData.email);
+    fd.append('subject', formData.phone); // or real subject
+    fd.append('message', formData.message);
+
+    fetch(scriptURL, {
+      method: 'POST',
+      body: fd, // IMPORTANT: no headers
+    })
+      .then(res => res.text())           // Apps Script returns text; parse yourself
+      .then(t => {
+        let data;
+        try { data = JSON.parse(t); } catch { data = { status: 'ok' }; }
+        console.log('Success:', data);
+        alert('Message sent!');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      })
+      .catch(err => {
+        console.error('Error!', err);
+        alert('Failed to send.');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      });
   };
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({

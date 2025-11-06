@@ -25,6 +25,16 @@ const Services = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState<ServiceDetail | null>(null);
 
+  const phoneNumber = "9150351005";
+  const message = "Hello! May I know more about the ";
+
+  const handleWhatsAppClick = (title: string) => {
+    const encodedMessage = encodeURIComponent(message);
+    const encodedtitle = encodeURIComponent(title);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}${encodedtitle}`;
+    console.log(whatsappUrl);
+    window.open(whatsappUrl, '_blank');
+  };
   const services: Service[] = [
     {
       icon: Laptop,
@@ -253,7 +263,7 @@ const Services = () => {
         <div className="mt-12 sm:mt-16 text-center animate-fade-in-up">
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 lg:space-x-8 bg-white dark:bg-slate-700 rounded-xl sm:rounded-2xl px-6 sm:px-8 lg:px-12 py-6 sm:py-8 shadow-lg hover-lift">
             <div className="text-center animate-scale-in" style={{ animationDelay: '0.1s' }}>
-              <div className="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1 sm:mb-2">1500+</div>
+              <div className="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1 sm:mb-2">230+</div>
               <div className="text-sm sm:text-base text-gray-600 dark:text-gray-300">Happy Clients</div>
             </div>
             <div className="hidden sm:block h-12 w-px bg-gray-300 dark:bg-gray-600"></div>
@@ -332,10 +342,7 @@ const Services = () => {
                       Contact us today for a free consultation and transparent pricing.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all duration-200 hover:scale-105 text-sm sm:text-base">
-                        Get Quote
-                      </button>
-                      <button className="border border-blue-600 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all duration-200 text-sm sm:text-base">
+                      <button onClick={() => handleWhatsAppClick(selectedService.title.replace(' ', '%20'))} className="border border-blue-600 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all duration-200 text-sm sm:text-base">
                         Contact Us
                       </button>
                     </div>
@@ -375,7 +382,7 @@ const Services = () => {
                     Contact us today for a free consultation and transparent pricing.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
-                    <button className="border border-blue-600 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 px-6 py-3 rounded-full font-medium transition-all duration-200">
+                    <button onClick={() => handleWhatsAppClick(selectedService.title)}  className="border border-blue-600 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 px-6 py-3 rounded-full font-medium transition-all duration-200">
                       Contact Us
                     </button>
                   </div>

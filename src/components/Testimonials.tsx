@@ -15,22 +15,22 @@ const Testimonials = () => {
       name: 'Kiran Kumar',
       company: 'DataFlow Solutions',
       text: 'Reliable and quick tech support. They solved our server issue in no time and prevented major downtime.',
-      rating: 5
+      rating: 4
     },
     {
       name: 'Santhosh Kumar',
       company: 'Creative Studio',
       text: 'Great value for money. The team is knowledgeable, friendly, and always available when we need support.',
-      rating: 5
+      rating: 3
     },
     {
       name: 'Suresh Kumar',
       company: 'Legal Associates',
       text: 'They saved our business with their prompt and effective IT solutions. Highly recommend for any tech needs.',
-      rating: 5
+      rating: 4
     },
     {
-      name: 'Rajesh Kumar',
+      name: 'Rajesh',
       company: 'Medical Practice',
       text: 'The best computer sales and service we\'ve experienced. Professional, reliable, and reasonably priced.',
       rating: 5
