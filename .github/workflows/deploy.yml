@@ -16,41 +16,40 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout code
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Cache previous FTP state (to avoid re-uploading unchanged files)
-      - name: Cache FTP deployment state
-        uses: actions/cache@v4
-        with:
-          path: .ftp-deploy-sync-state.json
-          key: ftp-state-${{ github.ref }}
-
-      # Set up Node.js
-      - name: Set up Node.js
+      - name: Use Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
 
-      # Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      # Build the project
-      - name: Build the project
+      - name: Build
         run: npm run build
 
-      # Deploy to Hostinger
+      - name: Verify build output
+        run: |
+          ls -la
+          ls -la dist || true
+
+      # Optional: reset sync state while debugging
+      - name: Reset FTP sync state
+        run: rm -f .ftp-deploy-sync-state.json || true
+
       - name: Deploy to Hostinger
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT }}
-          server-dir: ${{ secrets.FTP_REMOTE_DIR }}
-          local-dir: dist/
-          protocol: ftp
-          timeout: 60000
+          protocol: ftps            # or sftp
+          port: 21                  # or 22 for sftp
+          server-dir: /public_html/ # <-- set correctly, end with /
+          local-dir: dist/          # <-- change if your framework outputs elsewhere
+          log-level: verbose
+          timeout: 120000
+          # dangerous-clean-slate: true   # uncomment if you need remote deletions
