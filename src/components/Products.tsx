@@ -112,7 +112,7 @@ const Products = () => {
         <div className="mt-20">
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              Custom <span className="text-green-600 dark:text-green-400">Software Development</span>
+              <span className="text-green-600 dark:text-green-400">Software Development</span>
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               We also develop custom web applications and mobile apps according to your specific business requirements.
