@@ -145,7 +145,7 @@ const Products = () => {
                 <li className="flex items-center text-sm text-gray-600 dark:text-gray-300">
                   <ArrowRight className="h-4 w-4 text-green-600 mr-2" />
                   API Development
-                </li>
+                </li> 
               </ul>
             </div>
 

@@ -18,7 +18,7 @@ const Contact = () => {
 
     const fd = new FormData();
     fd.append('name', formData.name.trim());
-    fd.append('email', formData.email);
+    fd.append('email', formData.email); 
     fd.append('subject', formData.phone); // or real subject
     fd.append('message', formData.message);
 

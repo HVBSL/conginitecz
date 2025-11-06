@@ -13,7 +13,7 @@ interface Service {
   title: string;
   description: string;
 }
-
+ 
 interface ServiceDetail {
   emoji: string;
   title: string;
