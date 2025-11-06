@@ -24,9 +24,9 @@ const Contact = () => {
 
     fetch(scriptURL, {
       method: 'POST',
-      body: fd, // IMPORTANT: no headers
+      body: fd, 
     })
-      .then(res => res.text())           // Apps Script returns text; parse yourself
+      .then(res => res.text())          
       .then(t => {
         let data;
         try { data = JSON.parse(t); } catch { data = { status: 'ok' }; }
