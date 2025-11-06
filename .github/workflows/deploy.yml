@@ -20,12 +20,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Cache previous FTP state (to avoid re-uploading unchanged files)
-      - name: Cache FTP deployment state
-        uses: actions/cache@v4
-        with:
-          path: .ftp-deploy-sync-state.json
-          key: ftp-state-${{ github.ref }}
+      # # Cache previous FTP state (to avoid re-uploading unchanged files)
+      # - name: Cache FTP deployment state
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: .ftp-deploy-sync-state.json
+      #     key: ftp-state-${{ github.ref }}
 
       # Set up Node.js
       - name: Set up Node.js
