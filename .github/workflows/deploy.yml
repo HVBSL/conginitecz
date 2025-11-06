@@ -48,7 +48,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps # or sftp
           port: 21 # or 22 for sftp
-          server-dir: public_html/ # <-- set correctly, end with /
+          server-dir: / # <-- set correctly, end with /
           local-dir: dist/ # <-- change if your framework outputs elsewhere
           log-level: verbose
           timeout: 120000
