@@ -46,10 +46,10 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps            # or sftp
-          port: 21                  # or 22 for sftp
-          server-dir: /public_html/ # <-- set correctly, end with /
-          local-dir: dist/          # <-- change if your framework outputs elsewhere
+          protocol: ftps # or sftp
+          port: 21 # or 22 for sftp
+          server-dir: public_html/ # <-- set correctly, end with /
+          local-dir: dist/ # <-- change if your framework outputs elsewhere
           log-level: verbose
           timeout: 120000
           # dangerous-clean-slate: true   # uncomment if you need remote deletions
