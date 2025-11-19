@@ -100,7 +100,7 @@ const Products = () => {
 
                 <div className="flex items-center justify-between">
                   <button onClick={() => handleWhatsAppClick(product.name)} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-medium transition-all duration-200 hover:scale-105">
-                    Buy Now
+                    Contact Us
                   </button>
                 </div>
               </div>

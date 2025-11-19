@@ -84,7 +84,7 @@ const Contact = () => {
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Email</h4>
                   <p className="text-gray-600 dark:text-gray-300">conginiteczteam@conginitecz.com</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Response within 2 hours</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Immediate Response</p>
                 </div>
               </div>
 
@@ -193,6 +193,26 @@ const Contact = () => {
                 <span>Send Message</span>
               </button>
             </form>
+          </div>
+        </div>
+
+        {/* Google Map Section */}
+        <div className="mt-12 animate-fade-in-up">
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+            Find Us on Map
+          </h3>
+          <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
+            <iframe
+              src="https://www.google.com/maps?q=13.0820556,80.1832778&hl=en&z=17&output=embed"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full"
+              title="Conginitecz Location"
+            ></iframe>
           </div>
         </div>
       </div>
