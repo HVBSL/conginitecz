@@ -66,7 +66,7 @@ const Hero = () => {
   }, [slides.length]);
 
   return (
-    <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-40 md:pt-28">
       {/* Carousel Background */}
       <div className="absolute inset-0 z-0">
         <div className="overflow-hidden w-full h-full">

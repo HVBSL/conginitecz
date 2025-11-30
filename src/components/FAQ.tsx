@@ -21,7 +21,7 @@ const FAQ = () => {
     },
     {
       question: 'What\'s your response time?',
-      answer: 'Our typical response time for urgent issues is under 2 hours. For non-urgent matters, we respond within 24 hours. Emergency support is available 24/7 for critical business systems.'
+      answer: 'Our typical response time for urgent issues is immediate. For non-urgent matters, we respond within 24 hours. Emergency support is available 24/7 for critical business systems.'
     },
     {
       question: 'What operating systems do you support?',

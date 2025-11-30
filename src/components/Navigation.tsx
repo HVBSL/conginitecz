@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import logo from '../assets/logo.png';
 import logo2 from '../assets/TEXT_logo.png';
@@ -6,15 +6,18 @@ import ThemeToggle from './ThemeToggle';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  // const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setIsScrolled(window.scrollY > 10);
-  //   };
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => window.removeEventListener('scroll', handleScroll);
-  // }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      // TopHeader height is approximately 80px on mobile and 48px on desktop
+      const topHeaderHeight = window.innerWidth >= 768 ? 48 : 80;
+      setIsScrolled(window.scrollY >= topHeaderHeight - 5); // Small buffer for smooth transition
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial state
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -25,12 +28,12 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 bg-white/90 dark:bg-slate-900/70 backdrop-blur-md shadow-lg animate-slide-in-down`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 bg-white/90 dark:bg-slate-900/70 backdrop-blur-md shadow-lg ${isScrolled ? 'top-0' : 'top-20 md:top-12'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-2">
             <img src={logo} alt="logo" className="h-12 w-12" />
-            <img src={logo2} alt="logo" className="h-8" />
+            <img src={logo2} alt="logo" className="w-40 md:w-52" />
           </div>
 
           <div className="hidden md:block">

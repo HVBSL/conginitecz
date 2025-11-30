@@ -37,53 +37,92 @@ const Services = () => {
   };
   const services: Service[] = [
     {
-      icon: Laptop,
-      title: 'Laptop Sales & Service',
-      description: 'All brand laptop sales, repairs, upgrades, and maintenance. Free diagnosis & transparent pricing.',
-    },
-    {
-      icon: Server,
-      title: 'Server Sales & Service',
-      description: 'Enterprise server solutions, maintenance, and configuration. Custom-built and refurbished options.',
-    },
-    {
-      icon: Shield,
+      icon: biometricDevicesImg,
       title: 'Biometric Devices',
       description: 'Fingerprint scanners, face recognition, and access control systems with professional installation.',
     },
     {
-      icon: Camera,
+      icon: cctvSecurityImg,
       title: 'CCTV & Security',
       description: 'IP cameras, NVR/DVR setup, remote access, and complete surveillance solutions.',
     },
     {
-      icon: Network,
-      title: 'Network Setup',
-      description: 'Office LAN, Wi-Fi optimization, firewall configuration, and structured cabling services.',
-    },
-    {
-      icon: Printer,
+      icon: printerServiceImg,
       title: 'Printer Sales & Service',
       description: 'All major printer brands, installation, maintenance, and cartridge services.',
     },
     {
-      icon: Monitor,
+      icon: laptopServiceImg,
+      title: 'Laptop Sales & Service',
+      description: 'All brand laptop sales, repairs, upgrades, and maintenance. Free diagnosis & transparent pricing.',
+    },
+    {
+      icon: serverServiceImg,
+      title: 'Server Sales & Service',
+      description: 'Enterprise server solutions, maintenance, and configuration. Custom-built and refurbished options.',
+    },
+    {
+      icon: networkSetupImg,
+      title: 'Network Setup',
+      description: 'Office LAN, Wi-Fi optimization, firewall configuration, and structured cabling services.',
+    },
+    {
+      icon: laptopServiceImg,
       title: 'Desktop Sales & Service',
       description: 'Custom-built desktops, repairs, upgrades, and comprehensive maintenance services.',
     },
     {
-      icon: HardDrive,
+      icon: dataRecoveryImg,
       title: 'Data Recovery',
       description: 'Laptop and server data recovery from hardware failures and accidental deletion.',
     },
     {
-      icon: Settings,
+      icon: amcServicesImg,
       title: 'AMC Services',
       description: 'Annual maintenance contracts with priority support and preventive maintenance.',
     }
   ];
 
   const serviceDetails: Record<string, ServiceDetail> = {
+    'Biometric Devices': {
+      emoji: '🔐',
+      title: 'Biometric Device Sales & Configuration',
+      image: biometricDevicesImg,
+      content: [
+        'All Brand Biometric Device Sales: Fingerprint scanners, face recognition terminals, RFID card readers, and more.',
+        'Device Installation & Setup: On-site installation and configuration for attendance and access control.',
+        'User Enrollment & Management: Register users and configure access levels.',
+        'Software Integration: Integration with HRMS, payroll, and access control platforms.',
+        'Security Configuration: Secure authentication protocols and data protection policies.',
+        'Troubleshooting & Maintenance: Servicing, firmware updates, and issue resolution.',
+        'Free Consultation & Quotation: Expert advice and transparent pricing.'
+      ]
+    },
+    'CCTV & Security': {
+      emoji: '📸',
+      title: 'Camera Sales & Configuration',
+      image: cctvSecurityImg,
+      content: [
+        'All Brand Camera Sales: CCTV, IP cameras, PTZ cameras, dome cameras, and wireless systems.',
+        'Installation & Setup: Professional mounting and configuration for various environments.',
+        'NVR/DVR Configuration: Setup and optimization for video storage and playback.',
+        'Remote Access Setup: Live viewing and playback via mobile apps and cloud platforms.',
+        'Security & Motion Detection Settings: Configure alerts and privacy zones.',
+        'Maintenance & Troubleshooting: Servicing, firmware updates, and issue resolution.',
+        'Free Site Survey & Quotation: On-site inspection and customized planning.'
+      ]
+    },
+    'Printer Sales & Service': {
+      emoji: '🖨️',
+      title: 'Printer Sales & Service',
+      image: printerServiceImg,
+      content: [
+        'Sales of All Major Printer Brands: Inkjet, laser, multifunction, and thermal printers.',
+        'Installation, Configuration & Setup: On-site and remote setup, network configuration.',
+        'Troubleshooting & Maintenance: Diagnosis, repair, and regular servicing.',
+        'Cartridge Replacement & Refilling: Genuine and compatible cartridges, ink and toner refilling.'
+      ]
+    },
     'Laptop Sales & Service': {
       emoji: '🖥️',
       title: 'Laptop Sales & Service',
@@ -120,34 +159,6 @@ const Services = () => {
         'Free Diagnosis & Quotation: Initial inspection and transparent pricing.'
       ]
     },
-    'Biometric Devices': {
-      emoji: '🔐',
-      title: 'Biometric Device Sales & Configuration',
-      image: biometricDevicesImg,
-      content: [
-        'All Brand Biometric Device Sales: Fingerprint scanners, face recognition terminals, RFID card readers, and more.',
-        'Device Installation & Setup: On-site installation and configuration for attendance and access control.',
-        'User Enrollment & Management: Register users and configure access levels.',
-        'Software Integration: Integration with HRMS, payroll, and access control platforms.',
-        'Security Configuration: Secure authentication protocols and data protection policies.',
-        'Troubleshooting & Maintenance: Servicing, firmware updates, and issue resolution.',
-        'Free Consultation & Quotation: Expert advice and transparent pricing.'
-      ]
-    },
-    'CCTV & Security': {
-      emoji: '📸',
-      title: 'Camera Sales & Configuration',
-      image: cctvSecurityImg,
-      content: [
-        'All Brand Camera Sales: CCTV, IP cameras, PTZ cameras, dome cameras, and wireless systems.',
-        'Installation & Setup: Professional mounting and configuration for various environments.',
-        'NVR/DVR Configuration: Setup and optimization for video storage and playback.',
-        'Remote Access Setup: Live viewing and playback via mobile apps and cloud platforms.',
-        'Security & Motion Detection Settings: Configure alerts and privacy zones.',
-        'Maintenance & Troubleshooting: Servicing, firmware updates, and issue resolution.',
-        'Free Site Survey & Quotation: On-site inspection and customized planning.'
-      ]
-    },
     'Network Setup': {
       emoji: '🖥️',
       title: 'Office Network Setup & Configuration',
@@ -165,17 +176,6 @@ const Services = () => {
         'Structured cabling and power management.',
         'Cooling and airflow optimization.',
         'Server room planning and deployment.'
-      ]
-    },
-    'Printer Sales & Service': {
-      emoji: '🖨️',
-      title: 'Printer Sales & Service',
-      image: printerServiceImg,
-      content: [
-        'Sales of All Major Printer Brands: Inkjet, laser, multifunction, and thermal printers.',
-        'Installation, Configuration & Setup: On-site and remote setup, network configuration.',
-        'Troubleshooting & Maintenance: Diagnosis, repair, and regular servicing.',
-        'Cartridge Replacement & Refilling: Genuine and compatible cartridges, ink and toner refilling.'
       ]
     },
     'Desktop Sales & Service': {
@@ -229,7 +229,7 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-gray-50 dark:bg-slate-800 transition-colors duration-300">
+    <section id="services" className="bg-gray-50 dark:bg-slate-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
@@ -243,8 +243,8 @@ const Services = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {services.map((service, index) => (
             <div key={index} className="bg-white dark:bg-slate-700 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 group hover:transform hover:-translate-y-2 animate-fade-in-up hover-lift" style={{ animationDelay: `${index * 0.1}s` }}>
-              <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 rounded-full mb-4 sm:mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
-                <service.icon className="h-6 w-6 sm:h-8 sm:w-8" />
+              <div className="inline-flex items-center justify-center h-40 w-40 sm:h-40 sm:w-40 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 rounded-full mb-4 sm:mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                <img src={service.icon} alt={service.title} className="h-full w-full object-cover object-center" />
               </div>
               <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">{service.title}</h3>
               <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed">{service.description}</p>
@@ -260,7 +260,7 @@ const Services = () => {
           ))}
         </div>
 
-        <div className="mt-12 sm:mt-16 text-center animate-fade-in-up">
+        {/* <div className="mt-12 sm:mt-16 text-center animate-fade-in-up">
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 lg:space-x-8 bg-white dark:bg-slate-700 rounded-xl sm:rounded-2xl px-6 sm:px-8 lg:px-12 py-6 sm:py-8 shadow-lg hover-lift">
             <div className="text-center animate-scale-in" style={{ animationDelay: '0.1s' }}>
               <div className="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1 sm:mb-2">230+</div>
@@ -277,7 +277,7 @@ const Services = () => {
               <div className="text-sm sm:text-base text-gray-600 dark:text-gray-300">Success Rate</div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Service Details Modal */}

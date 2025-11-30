@@ -1,4 +1,5 @@
 import { ThemeProvider } from './contexts/ThemeContext';
+import TopHeader from './components/TopHeader';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -14,13 +15,14 @@ function App() {
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+        <TopHeader />
         <Navigation />
         <Hero />
         <About />
         <Services />
         {/* <Team /> */}
         <Products />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <FAQ />
         <Contact />
         <Footer />

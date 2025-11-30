@@ -18,7 +18,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
               <Monitor className="h-8 w-8 text-blue-400" />
-              <span className="text-2xl font-bold">ConginteTZ</span>
+              <span className="text-2xl font-bold">ConginiteCZ</span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
               Your trusted partner for comprehensive computer hardware, networking solutions, and expert technical support. 
