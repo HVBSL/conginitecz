@@ -54,7 +54,7 @@ const TopHeader = () => {
             <div className="flex items-center justify-between flex-wrap gap-2">
               <div className="flex items-center space-x-2 text-xs text-gray-700 dark:text-gray-300">
                 <Clock className="h-3.5 w-3.5 text-blue-600 dark:text-blue-400 flex-shrink-0" />
-                <span>Mon-Fri: 10:30 AM - 9:00 PM</span>
+                <span>Mon-Sat: 10:30 AM - 9:00 PM</span>
               </div>
 
               <div className="flex items-center space-x-3">
