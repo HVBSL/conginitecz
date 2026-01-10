@@ -17,7 +17,7 @@ const TopHeader = () => {
               {/* Working Hours */}
               <div className="flex items-center space-x-2 text-gray-700 dark:text-gray-300">
                 <Clock className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-                <span>Mon-Fri: 10:30 AM - 9:00 PM</span>
+                <span>Mon-Sat: 10:30 AM - 9:00 PM</span>
               </div>
             </div>
 
